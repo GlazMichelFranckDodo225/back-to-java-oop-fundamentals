@@ -1,13 +1,13 @@
-package com.dgmf.bjoopfundamentals;
+package com.dgmf;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BackToJavaOopFundamentalsApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BackToJavaOopFundamentalsApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }
