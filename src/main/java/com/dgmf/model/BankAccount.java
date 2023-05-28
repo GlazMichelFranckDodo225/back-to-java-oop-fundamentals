@@ -3,30 +3,22 @@ package com.dgmf.model;
 import java.util.UUID;
 
 public class BankAccount {
-    // Attributs
     private String accountId;
     private double balance;
     private String currency;
-    private String status;
+    private AccountStatus status;
 
-    // Constructeur par défaut (sans paramètres)
     public BankAccount() {
-        // Initialisation des attributs
-        accountId = UUID.randomUUID().toString(); // Nombre aléatoire unique
-        // dépendant de la Date Système
-        status = "CREATED";
+        this.accountId = UUID.randomUUID().toString();
+        this.status = AccountStatus.CREATED;
     }
 
-    // Constructeur avec paramètres
     public BankAccount(String currency, double initialBalance) {
-        // Appel du constructeur par défaut (sans paramètres)
         this();
-        // Initialisation des attributs
         this.currency = currency;
         this.balance = initialBalance;
     }
 
-    // Getters et Setters
     public String getAccountId() {
         return accountId;
     }
@@ -51,11 +43,11 @@ public class BankAccount {
         this.currency = currency;
     }
 
-    public String getStatus() {
+    public AccountStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(AccountStatus status) {
         this.status = status;
     }
 }

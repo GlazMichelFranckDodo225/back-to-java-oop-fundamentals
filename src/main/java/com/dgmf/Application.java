@@ -8,16 +8,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Application {
 
 	public static void main(String[] args) {
-		// Création d'un objet account1
-		BankAccount account1 = null;
-		// Création d'un objet (constructeur par défaut)
+		BankAccount account1;
 		account1 = new BankAccount();
 
-		// Modification des attributs de l'objet "account1"
 		account1.setCurrency("$ US");
 		account1.setBalance(7600);
 
-		// Création d'un objet account2 (constructeur avec paramètres)
 		BankAccount account2 = new BankAccount("£ GB", 1200);
 
 		printAccount(account1);
