@@ -1,17 +1,29 @@
 package com.dgmf.model;
 
-// Modificateurs d'accès (visibilité) : "public", "protected", "package" et "package"
+import java.util.UUID;
+
 public class BankAccount {
-    // par défaut (pas de visibilité précisée) ==> correspond à la
-    // visibilité "package" ==> Attributs UNIQUEMENT accessibles depuis
-    // les classes se trouvant dans le même package
+    // Attributs
     private String accountId;
     private double balance;
     private String currency;
     private String status;
 
+    // Constructeur par défaut (sans paramètres)
     public BankAccount() {
+        // Initialisation des attributs
+        accountId = UUID.randomUUID().toString(); // Nombre aléatoire unique
+        // dépendant de la Date Système
         status = "CREATED";
+    }
+
+    // Constructeur avec paramètres
+    public BankAccount(String currency, double initialBalance) {
+        // Appel du constructeur par défaut (sans paramètres)
+        this();
+        // Initialisation des attributs
+        this.currency = currency;
+        this.balance = initialBalance;
     }
 
     // Getters et Setters
