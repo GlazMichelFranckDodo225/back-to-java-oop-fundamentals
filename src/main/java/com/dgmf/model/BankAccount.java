@@ -1,10 +1,10 @@
 package com.dgmf.model;
 
 public class BankAccount {
-    // public ==> Attributs accessibles depuis n'importe
-    // classes depuis l'extérieur ==> pas de restrictions
-    public String accountId;
-    public double balance;
-    public String currency;
-    public String status;
+    // private ==> Attributs UNIQUEMENT accessibles depuis
+    // l'intérieur de la classe
+    private String accountId;
+    private double balance;
+    private String currency;
+    private String status;
 }
