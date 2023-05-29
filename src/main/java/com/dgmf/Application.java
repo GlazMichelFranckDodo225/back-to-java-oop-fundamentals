@@ -28,6 +28,7 @@ public class Application {
 		System.out.println("Balance = " + account.getBalance());
 		System.out.println("Status = " + account.getStatus());
 		System.out.println("Currency = " + account.getCurrency());
-		System.out.println("******************************");
+		System.out.println("******** toString() **********");
+		System.out.println("Account Status" + account);
 	}
 }
