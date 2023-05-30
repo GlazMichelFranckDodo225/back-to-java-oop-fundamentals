@@ -8,35 +8,24 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Application {
 
 	public static void main(String[] args) {
-		BankAccount account1;
-		account1 = new BankAccount();
-
-		account1.setCurrency("$ US");
-		account1.setBalance(7600);
-
-		BankAccount account2 = new BankAccount("£ GB", 1200);
-		// Création d'un objet "account3" en passant les mêmes valeurs que
-		// pour l'objet "account2"
-		BankAccount account3 = new BankAccount("£ GB", 1200);
-
-		/*printAccount(account1);
-		printAccount(account2);
-		printAccount(account3);*/
-
-		// Synthèse : "==", "hascode()" et "equals" (après redéfinition)
-		System.out.println("+++++++ Synthèse : \"==\", \"hascode()\" et \"equals\" (après redéfinition) +++++++");
-		System.out.println("******** Avant que Account2 et Account3 aient le même Id ********");
-		System.out.println("Account2 == Account3 : " + (account2 == account3));
-		System.out.println("Hascode Account2 : " + account2.hashCode());
-		System.out.println("Hascode Account3 : " + account3.hashCode());
-		System.out.println("Account2 equals (après redéfinition) Account3 : " + account2.equals(account3));
-		// On leur donne le même id
-		account3.setAccountId(account2.getAccountId());
-		System.out.println("******** Maintenant Account2 et Account3 ont le même Id **********");
-		System.out.println("Account2 == Account3 : " + (account2 == account3));
-		System.out.println("Hascode Account2 : " + account2.hashCode());
-		System.out.println("Hascode Account3 : " + account3.hashCode());
-		System.out.println("Account2 equals (après redéfinition) Account3 : " + account2.equals(account3));
+		// Comparaisons de String
+		// Création avec l'opérateur "new"
+		System.out.println("********* Création avec l'opérateur \"new\" *********");
+		String s1 = new String("Azerty");
+		String s2 = new String("Azerty");
+		System.out.println("S1 : " + s1);
+		System.out.println("S2 : " + s2);
+		System.out.println("S1 == S2 : " + (s1 == s2));
+		System.out.println("S1 equals S2 : " + (s1 == s2));
+		System.out.println("\n");
+		// Création sans l'opérateur "new"
+		System.out.println("********* Création sans l'opérateur \"new\" *********");
+		String s3 = "Azerty";
+		String s4 = "Azerty";
+		System.out.println("S3 : " + s3);
+		System.out.println("S4 : " + s4);
+		System.out.println("S3 == S4 : " + (s3 == s4));
+		System.out.println("S3 equals S4 : " + (s3 == s4));
 
 
 		SpringApplication.run(Application.class, args);
