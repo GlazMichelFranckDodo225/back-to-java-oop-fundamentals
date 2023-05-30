@@ -73,4 +73,13 @@ public class BankAccount {
 
         return this.getAccountId().equals(account.getAccountId()) ? true : false;
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(this.accountId) +
+            Objects.hashCode(this.balance) +
+            Objects.hashCode(this.status) +
+            Objects.hashCode(this.currency)
+        ;
+    }
 }

@@ -8,24 +8,19 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Application {
 
 	public static void main(String[] args) {
-		// Comparaisons de String
-		// Création avec l'opérateur "new"
-		System.out.println("********* Création avec l'opérateur \"new\" *********");
-		String s1 = new String("Azerty");
-		String s2 = new String("Azerty");
-		System.out.println("S1 : " + s1);
-		System.out.println("S2 : " + s2);
-		System.out.println("S1 == S2 : " + (s1 == s2));
-		System.out.println("S1 equals S2 : " + (s1 == s2));
-		System.out.println("\n");
-		// Création sans l'opérateur "new"
-		System.out.println("********* Création sans l'opérateur \"new\" *********");
-		String s3 = "Azerty";
-		String s4 = "Azerty";
-		System.out.println("S3 : " + s3);
-		System.out.println("S4 : " + s4);
-		System.out.println("S3 == S4 : " + (s3 == s4));
-		System.out.println("S3 equals S4 : " + (s3 == s4));
+		BankAccount account1 = new BankAccount("US $", 1200);
+		BankAccount account2 = new BankAccount("US $", 1200);
+
+		System.out.println("********* HASCODE *********");
+		System.out.println("Les 2 objets ont des Id différents");
+		System.out.println("Hascode Account1 : " + account1.hashCode());
+		System.out.println("Hascode Account : " + account2.hashCode());
+		System.out.println("***************************");
+		System.out.println("Les 2 objets ont les mêmes Id");
+		account2.setAccountId(account1.getAccountId());
+		System.out.println("Hascode Account1 : " + account1.hashCode());
+		System.out.println("Hascode Account : " + account2.hashCode());
+		System.out.println("2 OBJETS AYANT LE MEME ETAT (VALEURS D'ATTRIBUTS IDENTIQUES) ONT LE MEME HASCODE");
 
 
 		SpringApplication.run(Application.class, args);
