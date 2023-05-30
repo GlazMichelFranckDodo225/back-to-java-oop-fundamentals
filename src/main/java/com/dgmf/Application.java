@@ -23,14 +23,20 @@ public class Application {
 		printAccount(account2);
 		printAccount(account3);*/
 
-		// Méthode "equals()" ==> Redéfinition
-		System.out.println("******** Méthode \"equals()\" ==> Redéfinition **********");
-		System.out.println("Avant que Account2 et Account3 aient le même Id");
-		System.out.println("Account2 = Account3 : " + account2.equals(account3));
+		// Synthèse : "==", "hascode()" et "equals" (après redéfinition)
+		System.out.println("+++++++ Synthèse : \"==\", \"hascode()\" et \"equals\" (après redéfinition) +++++++");
+		System.out.println("******** Avant que Account2 et Account3 aient le même Id ********");
+		System.out.println("Account2 == Account3 : " + (account2 == account3));
+		System.out.println("Hascode Account2 : " + account2.hashCode());
+		System.out.println("Hascode Account3 : " + account3.hashCode());
+		System.out.println("Account2 equals (après redéfinition) Account3 : " + account2.equals(account3));
 		// On leur donne le même id
 		account3.setAccountId(account2.getAccountId());
-		System.out.println("Maintenant Account2 et Account3 ont le même Id");
-		System.out.println("Account2 = Account3 : " + account2.equals(account3));
+		System.out.println("******** Maintenant Account2 et Account3 ont le même Id **********");
+		System.out.println("Account2 == Account3 : " + (account2 == account3));
+		System.out.println("Hascode Account2 : " + account2.hashCode());
+		System.out.println("Hascode Account3 : " + account3.hashCode());
+		System.out.println("Account2 equals (après redéfinition) Account3 : " + account2.equals(account3));
 
 
 		SpringApplication.run(Application.class, args);
