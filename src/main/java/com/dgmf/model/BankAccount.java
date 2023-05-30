@@ -1,5 +1,6 @@
 package com.dgmf.model;
 
+import java.util.Objects;
 import java.util.UUID;
 
 public class BankAccount {
@@ -63,5 +64,13 @@ public class BankAccount {
                 ", currency='" + currency + '\'' +
                 ", status=" + status +
                 '}';
+    }
+
+    // Redéfinition de la méthode "equals()"
+    @Override
+    public boolean equals(Object accountInParam) {
+        BankAccount account = (BankAccount) accountInParam;
+
+        return this.getAccountId().equals(account.getAccountId()) ? true : false;
     }
 }

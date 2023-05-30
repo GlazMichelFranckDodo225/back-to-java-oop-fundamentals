@@ -23,24 +23,14 @@ public class Application {
 		printAccount(account2);
 		printAccount(account3);*/
 
-		// Méthode "hashCode()"
-		System.out.println("******** Méthode \"hashCode()\" **********");
-		// On affiche les hashcodes de "account2" et "account3"
-		System.out.println("Hashcode Account2 = " + account2.hashCode());
-		System.out.println("Hashcode Account3 = " + account3.hashCode());
+		// Méthode "equals()" ==> Redéfinition
+		System.out.println("******** Méthode \"equals()\" ==> Redéfinition **********");
+		System.out.println("Avant que Account2 et Account3 aient le même Id");
+		System.out.println("Account2 = Account3 : " + account2.equals(account3));
 		// On leur donne le même id
 		account3.setAccountId(account2.getAccountId());
-		// On les affiche
 		System.out.println("Maintenant Account2 et Account3 ont le même Id");
-		System.out.println("Hashcode Account2 = " + account2.hashCode());
-		System.out.println("Hashcode Account3 = " + account3.hashCode());
-		/* Comparaison de "account2" et "account3" ==> Retourne quand même "false"
-		malgré que les 2 objets ont des valeurs d'attributs toutes identiques
-		==> La raison : Méthode "hashCode()" prend aussi en compte les références
-		(adresses mémoires) des 2 objets et elles sont différentes ici (à cause de
-		l'utilisation de l'opérateur "new" qui crée des objets en leur attribuant
-		des adresses mémoires différentes ==> chaque objet a son propre hascode à
-		partir du moment où il a sa propre référence */
+		System.out.println("Account2 = Account3 : " + account2.equals(account3));
 
 
 		SpringApplication.run(Application.class, args);
