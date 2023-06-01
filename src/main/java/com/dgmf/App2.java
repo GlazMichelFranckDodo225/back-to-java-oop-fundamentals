@@ -3,7 +3,9 @@ package com.dgmf;
 import com.dgmf.model.BankAccount;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class App2 {
     public static void main(String[] args) {
@@ -44,5 +46,26 @@ public class App2 {
         for (BankAccount account: bankAccountArrayList) {
             System.out.println(account.getBalance());
         }
+
+        System.out.println("********* Tableaux dynamiques (Tableaux à Dimensions Variables) - Collections - Map *********");
+        // Création d'une HasMap ==> listes de paires "Clé-Valeur" implémentant l'interface Map
+        Map<String, BankAccount> bankAccountMap = new HashMap<>();
+        // Remplissage la HashMap "bankAccountMap"
+        bankAccountMap.put("cc1", new BankAccount("US $", 5400));
+        bankAccountMap.put("cc2", new BankAccount("GB £", 1298));
+        bankAccountMap.put("cc3", new BankAccount("EUR €", 3200));
+        bankAccountMap.put("cc4", new BankAccount("JPY ¥", 2359));
+
+        System.out.println("----- Affichage d'un élément de la HashMap \"bankAccountMap\" -----");
+        System.out.println(bankAccountMap.get("cc1"));
+        System.out.println("----- Parcours de la HasMap \"bankAccountMap\" en utilisant les Clés (Keys) -----");
+        for (String key: bankAccountMap.keySet()) {
+            System.out.println(bankAccountMap.get(key));
+        }
+        System.out.println("----- Parcours de la HasMap \"bankAccountMap\" en utilisant les Valeurs (Values) -----");
+        for (BankAccount account: bankAccountMap.values()) {
+            System.out.println(account);
+        }
+
     }
 }
