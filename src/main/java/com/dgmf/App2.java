@@ -1,6 +1,8 @@
 package com.dgmf;
 
 import com.dgmf.model.BankAccount;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 public class App2 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws JsonProcessingException {
         System.out.println("********* Tableaux à Dimensions Fixes *********");
         // Création d'un tableau de "BankAccount" avec 4 éléments
         // Tableau à dimensions fixes
@@ -63,9 +65,18 @@ public class App2 {
             System.out.println(bankAccountMap.get(key));
         }
         System.out.println("----- Parcours de la HasMap \"bankAccountMap\" en utilisant les Valeurs (Values) -----");
-        for (BankAccount account: bankAccountMap.values()) {
-            System.out.println(account);
-        }
 
+        System.out.println("----- Conversion des BankAccount au Format JSON -----");
+        for (BankAccount account: bankAccountMap.values()) {
+            // System.out.println(account);
+            System.out.println(toJson(account));
+        }
+    }
+
+    // Conversion des BankAccount au Format JSON
+    public static String toJson(Object o) throws JsonProcessingException {
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        return objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(o);
     }
 }
