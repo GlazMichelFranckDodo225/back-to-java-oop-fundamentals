@@ -5,7 +5,6 @@ public class CurrentAccount extends BankAccount {
 
     public CurrentAccount() {
         super();
-        this.overDraft = overDraft;
     }
 
     public CurrentAccount(String currency, double initialBalance, double overDraft) {
