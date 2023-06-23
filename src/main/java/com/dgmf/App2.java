@@ -50,7 +50,14 @@ public class App2 {
         // Affichage de la balance des éléments de la ArrayList "bankAccountArrayList"
         for (BankAccount account: bankAccountArrayList) {
             System.out.println(account.getBalance());
-            System.out.println(account.getType());
+            // System.out.println(account.getType());
+            // Simulation de l'application par le compilateur du "Late binding" ou Liaison tardive (ou retardée) :
+            // les méthodes à exécuter sont déterminées à la création de l'objet et non de la classe
+            if(account instanceof CurrentAccount) {
+                System.out.println(((CurrentAccount) account).getType());;
+            } else if (account instanceof SavingAccount) {
+                System.out.println(((SavingAccount) account).getType());;
+            }
         }
 
         System.out.println("********* Tableaux dynamiques (Tableaux à Dimensions Variables) - Collections - Map *********");
