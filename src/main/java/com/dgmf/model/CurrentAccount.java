@@ -24,4 +24,9 @@ public class CurrentAccount extends BankAccount {
     public String toString() {
         return "Current Account Overdraft : " + this.overDraft + super.toString();
     }
+
+    @Override
+    public String getType() {
+        return "CURRENT ACCOUNT";
+    }
 }
