@@ -65,7 +65,12 @@ public class App2 {
 
             // Par contre, pour afficher le Taux d'intérêt d'un "account", on est obligé d'écrire nous-même
             // le code adéquat puisque la méthode "getInterestRate()" n'existe pas dans un Objet "account"
-            System.out.println(account.getInterestRate());
+            if(account instanceof SavingAccount) {
+                System.out.println("Rate = " + ((SavingAccount) account).getInterestRate());
+            }
+            if(account instanceof CurrentAccount) {
+                System.out.println("Overdraft = " + ((CurrentAccount) account).getOverDraft());
+            }
         }
 
         System.out.println("********* Tableaux dynamiques (Tableaux à Dimensions Variables) - Collections - Map *********");
