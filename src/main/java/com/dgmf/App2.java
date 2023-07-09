@@ -59,7 +59,13 @@ public class App2 {
             } */
 
             // Exploitation du Polymorphisme (ou du "Late binding")
+            /* La JVM décide automatiquement la méthode "getType()" à appeler selon le Type de l'Objet courant,
+            c'est-à-dire que la JVM applique implicitement le "Late binding" à l'exécution */
             System.out.println(account.getType());
+
+            // Par contre, pour afficher le Taux d'intérêt d'un "account", on est obligé d'écrire nous-même
+            // le code adéquat puisque la méthode "getInterestRate()" n'existe pas dans un Objet "account"
+            System.out.println(account.getInterestRate());
         }
 
         System.out.println("********* Tableaux dynamiques (Tableaux à Dimensions Variables) - Collections - Map *********");
